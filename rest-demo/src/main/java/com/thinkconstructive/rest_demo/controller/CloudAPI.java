@@ -16,10 +16,17 @@ public class CloudAPI {
     }
 
     @PostMapping
-   public String createCloudVendorDetails(@RequestBody CloudVendor cloudVendor)
+   public String updateCloudVendorDetails(@RequestBody CloudVendor cloudVendor)
     {
         this.cloudVendor=cloudVendor;
         return "Cloud vendor displayed successfully";
+    }
+
+    @DeleteMapping("{vendorId}")
+    public String deleteClouudVendorDetails(String vendorId)
+    {
+        this.cloudVendor=null;
+        return "cloud vendor deleted successfully!";
     }
 
 }
