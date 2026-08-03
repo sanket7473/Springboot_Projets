@@ -1,8 +1,28 @@
 package com.thinkconstructive.rest_demo.Model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="cloud_vendor_info")
 public class CloudVendor
 {
+
+    @Id
     private  String vendorID;
+    private String vendorName;
+
+    private String vendorAddress;
+    private String vendorPhoneNumber;
+    public CloudVendor(String vendorID, String vendorName, String vendorAddress, String vendorPhoneNumber) {
+        this.vendorID = vendorID;
+        this.vendorName = vendorName;
+        this.vendorAddress = vendorAddress;
+        this.vendorPhoneNumber = vendorPhoneNumber;
+    }
+
 
     public String getVendorID() {
         return vendorID;
@@ -36,20 +56,12 @@ public class CloudVendor
         this.vendorPhoneNumber = vendorPhoneNumber;
     }
 
-    public CloudVendor(String vendorID, String vendorName, String vendorAddress, String vendorPhoneNumber) {
-        this.vendorID = vendorID;
-        this.vendorName = vendorName;
-        this.vendorAddress = vendorAddress;
-        this.vendorPhoneNumber = vendorPhoneNumber;
-    }
+
 
     public CloudVendor() {
     }
 
-    private String vendorName;
 
-    private String vendorAddress;
-    private String vendorPhoneNumber;
 
 }
 
